@@ -12,7 +12,7 @@ export default function Home() {
   }, []);
   const getUser = () => {
     axios
-      .get(`http://localhost:5000/api/getPatiend`)
+      .get(`http://localhost:6868/api/getPatiend`)
       .then((rerult) => {
         setUser(rerult.data);
       })

@@ -20,7 +20,7 @@ export default function editPatiend() {
   const getUserSelect = (id) => {
     console.log(id);
     axios
-      .get(`http://localhost:5000/api/getPatiend/${id}`)
+      .get(`http://localhost:6868/api/getPatiend/${id}`)
       .then((rerult) => {
         console.log(rerult);
         const { firstname, lastname, idcard, age } = rerult.data;
@@ -45,7 +45,7 @@ export default function editPatiend() {
       age: age,
     };
     axios
-      .put(`http://localhost:5000/api/patiend/${id}`, detailform)
+      .put(`http://localhost:6868/api/patiend/${id}`, detailform)
       .then((result) => {
         console.log(result);
         Swal.fire({
