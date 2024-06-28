@@ -1,17 +1,21 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import PatiendRouter from "./src/route/Patient";
+import patientRouter from "./src/route/Patient"; // Assuming this is your patient route
+
 dotenv.config();
+
 const app = express();
-app.use(cors()); // ใช้ CORS middleware
 
+// Middleware
+app.use(cors()); // Enable CORS
+app.use(express.json()); // Parse JSON request bodies
 
-app.use(express.json());
-console.log("test");
+// Routes
+app.use("/api", patientRouter); // Mount the patient router
 
-app.use("/api", PatiendRouter);
-
-app.listen(3000, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
