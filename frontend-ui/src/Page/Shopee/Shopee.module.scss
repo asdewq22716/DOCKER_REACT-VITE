@@ -1,0 +1,38 @@
+.contentProduct {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  .search {
+    background-color: #f1f1f1;
+  }
+}
+@media (max-width: 1650px) {
+  .contentProduct {
+    grid-template-columns: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1650px) {
+  .contentProduct {
+    grid-template-columns: none;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 1265px) {
+  .contentProduct {
+    grid-template-columns: none;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.BackProduct {
+  background-color: #d3d3d3;
+}
+.container {
+  margin: 0px 50px 0px 50px;
+  padding: 10px 0px 10px 0px;
+  box-sizing: border-box;
+  height: 100vh; /* ให้ความสูงเท่ากับความสูงของหน้าจอทั้งหมด */
+  display: flex;
+  flex-direction: column; /* จัดเรียงเป็นคอลัมน์ */
+}

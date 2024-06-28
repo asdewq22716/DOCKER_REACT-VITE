@@ -6,19 +6,23 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Layout from "./Layout/Layout.jsx";
 
 import Home from "./Page/Home.jsx";
+import Patiend from "./Page/Patiend.jsx";
 import RegisterPatiend from "./Page/RegisterPatiend.jsx";
 import EditPatiend from "./Page/EditPatiend.jsx";
+import Shopee from "./Page/Shopee/Shopee.jsx";
+import Product from "./Page/Shopee/Product.jsx";
 
 const App = () => {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<RegisterPatiend />} />
-          <Route path="/edit/:id" element={<EditPatiend />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Patiend" element={<Patiend />} />
+        <Route path="/register" element={<RegisterPatiend />} />
+        <Route path="/edit/:id" element={<EditPatiend />} />
+        <Route path="/shopee" element={<Shopee />} />
+        <Route path="/product/:id" element={<Product />} />
+      </Routes>
     </Router>
   );
 };

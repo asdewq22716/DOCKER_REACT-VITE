@@ -1,0 +1,48 @@
+.cardProduct {
+  background-color: #fff;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .availabilityStatus {
+    background-color: #ff1010a6;
+    color: #fff;
+    position: relative;
+    left: 200px;
+    top: -280px;
+    padding: 0px 0px 0px 10px;
+    border-radius: 10px;
+  }
+  .brand {
+    background-color: #fc0000ce;
+    color: #fff;
+    position: relative;
+  }
+  .img {
+    margin: 10px;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .cardTitle {
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .price {
+    position: relative;
+    left: 225px;
+  }
+  .cardAction {
+    background-color: #5946ac;
+    width: 100%;
+    text-align: center;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
