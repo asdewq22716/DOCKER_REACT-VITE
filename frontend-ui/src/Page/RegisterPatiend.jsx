@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
-import axios from "axios";
+import apiClient from "../../httpCmd";
 
 export default function () {
   const [detailform, setDetailForm] = useState({
@@ -16,8 +16,8 @@ export default function () {
   };
   const handleSubmit = (e) => {
     const { name, lastname, idCard, age } = detailform;
-    axios
-      .post(`http://localhost:5000/api/createPatiend`, {
+    apiClient
+      .post(`/createPatiend`, {
         name,
         lastname,
         idCard,

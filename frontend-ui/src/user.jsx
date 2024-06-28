@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import apiClient from '../httpCmd';
 
 export default function App() {
   const [user, setUser] = useState([]);
@@ -7,8 +7,8 @@ export default function App() {
     getUser();
   }, []);
   const getUser = () => {
-    axios
-      .get(`http://localhost:5000/api/getPatiend`)
+    apiClient
+      .get(`/getPatiend`)
       .then((rerult) => {
         console.table(rerult.data);
         setUser(rerult.data);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import apiClient from "../../httpCmd";
+
 import Swal from "sweetalert2";
 export default function editPatiend() {
   const { id } = useParams();
@@ -19,8 +20,8 @@ export default function editPatiend() {
   }, [id]);
   const getUserSelect = (id) => {
     console.log(id);
-    axios
-      .get(`http://localhost:5000/api/getPatiend/${id}`)
+    apiClient
+      .get(`/getPatiend/${id}`)
       .then((rerult) => {
         console.log(rerult);
         const { firstname, lastname, idcard, age } = rerult.data;
@@ -44,8 +45,8 @@ export default function editPatiend() {
       idcard: idCard,
       age: age,
     };
-    axios
-      .put(`http://localhost:5000/api/patiend/${id}`, detailform)
+    apiClient
+      .put(`/patiend/${id}`, detailform)
       .then((result) => {
         console.log(result);
         Swal.fire({

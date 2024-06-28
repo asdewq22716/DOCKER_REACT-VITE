@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import styles from "./Patiend.module.scss";
-import axios from "axios";
+import apiClient from "../../httpCmd";
 import Swal from "sweetalert2";
 import { BrowserRouter as Router, Link, useParams } from "react-router-dom";
 import Layout from "../Layout/Layout";
@@ -11,8 +11,8 @@ export default function Patiend() {
     getUser();
   }, []);
   const getUser = () => {
-    axios
-      .get(`http://localhost:5000/api/getPatiend`)
+    apiClient
+      .get(`/getPatiend`)
       .then((rerult) => {
         setUser(rerult.data);
       })
@@ -43,8 +43,8 @@ export default function Patiend() {
     });
   };
   const DeleteDn = (id) => {
-    axios
-      .delete(`http://localhost:5000/api/patiend/${id}`)
+    apiClient
+      .delete(`/patiend/${id}`)
       .then((rerult) => {
         const paramDelect = user.filter((result) => result.id !== id);
         setUser(paramDelect);
