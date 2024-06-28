@@ -1,9 +1,9 @@
-import mysql, { Connection } from "mysql2";
-import dotenv from "dotenv";
+const mysql = require("mysql2");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-const db: Connection = mysql.createConnection({
+const db = mysql.createConnection({
   host: process.env.DB_HOST || "db",
   port: parseInt(process.env.DB_PORT || "3306", 10),
   user: process.env.DB_USER || "root",
@@ -19,4 +19,4 @@ db.connect((err) => {
   console.log("Connected to MySQL as id", db.threadId);
 });
 
-export default db;
+module.exports = db;
