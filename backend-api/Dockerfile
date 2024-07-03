@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /ReactBackend
+WORKDIR /backend-api
 COPY package.json .
 RUN npm install
 COPY . .

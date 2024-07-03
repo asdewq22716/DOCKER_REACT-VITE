@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend-api:
-    build: ./ReactBackend
+    build: ./backend-api
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -13,7 +13,7 @@ services:
 
   frontend-ui:
     build:
-      context: ./ReactFrontend
+      context: ./frontend-ui
       args:
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
     ports:
