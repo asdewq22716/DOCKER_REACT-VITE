@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
+import logo from "../../../assets/logo_b.png";
 import { BrowserRouter as Router, Link, useParams } from "react-router-dom";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,19 +11,22 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav className={styles.nav}>
+      <div className={styles.nav}>
         <div className={styles.header}>
-          <h3>Logo</h3>
-          <div className={styles.hamberger} onClick={toggleMenu}>
-            <i className="fa fa-bars"></i>
-          </div>
+          <img src={logo} className={styles.AppLogo} alt="logo" />
         </div>
-        <ul className={`${isMenuOpen ? styles.navOpen : ""}`}>
-          <li className={styles.liTop}>
-            <Link>Product</Link>
+        <div className={styles.hamberger} onClick={toggleMenu}>
+          <i className="fa fa-bars"></i>
+        </div>
+        <ul className={`${styles.ul_bar} ${isMenuOpen ? styles.navOpen : ""}`}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/shopee">Shop</Link>
           </li>
         </ul>
-      </nav>
+      </div>
     </>
   );
 }

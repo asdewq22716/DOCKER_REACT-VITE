@@ -1,9 +1,115 @@
-.main {
-  background-color: #ebebeb;
-  height: 100%;
+$itemColor: #16a085;
+$itemColor1: #138d75;
+$itemColor2: rgb(46, 64, 83);
+
+.itemStyle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+
+  .itemDetail {
+    display: block;
+    .titleM {
+      font-size: 28px;
+      font-weight: 600;
+      color: $itemColor2;
+    }
+    .BrandsTitle {
+      font-size: 12px;
+      font-style: normal;
+    }
+    .brand {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      color: $itemColor;
+    }
+    .price {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      color: $itemColor;
+    }
+    .description {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      color: $itemColor2;
+      opacity: 80%;
+    }
+
+    .brandDiv {
+      padding: 10px 0px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.1);
+    }
+    .priceDiv {
+      padding: 10px 0px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.1);
+    }
+    .descriptionDiv {
+      padding: 15px 0px;
+    }
+  }
+  .itemContent {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+  }
+}
+@media (max-width: 600px) {
+  .itemStyle {
+    display: block;
+  }
 }
 .cardProduct {
-  padding: 15px;
-  box-sizing: border-box;
-  background-color: #fff;
+  overflow: hidden;
+  object-fit: cover;
+  .itemImg {
+    display: flex;
+    justify-content: center;
+    .imgMain {
+      height: 400px;
+      width: 300px;
+    }
+  }
+  .imaSubDiv {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+  .imgSubStyle {
+    height: 150px; /* เพิ่มความสูงตามต้องการ */
+    object-fit: cover;
+  }
+}
+
+.PDS {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px 20px;
+  .PDH {
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid rgb(46, 64, 83, 0.5);
+    opacity: 60%;
+  }
+  .PDU {
+    margin-top: 10px;
+    border-bottom: 1px solid rgb(46, 64, 83, 0.5);
+    opacity: 60%;
+  }
+}
+
+.RatingStyle {
+  display: flex;
+  span {
+    color: #f1c40f;
+    width: 20px;
+  }
+}
+
+.ReviewsDivMain {
+  margin-top: 10px;
+  border-bottom: 1px solid rgb(46, 64, 83, 0.5);
+  opacity: 80%;
 }

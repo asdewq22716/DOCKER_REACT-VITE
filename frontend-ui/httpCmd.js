@@ -1,12 +1,10 @@
 import axios from "axios";
-
-// Create an axios instance with predefined settings
+import dotenv from 'dotenv';
 const apiClient = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || "http://localhost:8080/api",
+  baseURL: `https://shopreactbackend.onrender.com/api`,
   headers: {
     "Content-type": "application/json",
   },
 });
 
-// Export the axios instance
 export default apiClient;

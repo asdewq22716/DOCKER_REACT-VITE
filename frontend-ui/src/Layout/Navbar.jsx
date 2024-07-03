@@ -26,8 +26,8 @@ export default function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeclassname={styles.active}>
-                About
+              <NavLink to="/Patiend" activeclassname={styles.active}>
+                Patiend
               </NavLink>
             </li>
           </ul>

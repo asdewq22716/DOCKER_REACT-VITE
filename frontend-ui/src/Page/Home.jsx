@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Link, useParams } from "react-router-dom";
 export default function Home() {
   return (
     <div>
-      <div className="container">
-        <nav>
+      <div className="container ">
+        <nav className="mt-4">
           <ul>
             <li>
               <Link to="/Patiend">
